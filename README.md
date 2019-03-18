@@ -19,9 +19,9 @@ as of September 2016).
 
 You will need the following packages:
 
-    apt-get install build-essential g++-5 automake pkg-config \
+    apt-get update && apt-get install build-essential g++-5 automake pkg-config \
                     python-dev python-boto3 libssl-dev python-openssl \
-                    libpng-dev zlib1g-dev libtool libtool-bin awscli
+                    libpng-dev zlib1g-dev libtool libtool-bin awscli zip python-pip
 
 You'll also need an AWS ID, both for the
 [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
@@ -68,7 +68,7 @@ worry, we'll figure out how the PNGs get downloaded below.)
 To do this, we'll invoke the `lambdaize.sh` script in the `mu` repo:
 
     cd /tmp/mu_example
-    MEM_SIZE=1536 TIMEOUT=180 ./mu/src/lambdaize/lambdaize.sh \
+    MEM_SIZE=1536 TIMEOUT=180 ./src/lambdaize/lambdaize.sh \
         ./daala_tools/png2y4m \
         '' \
         '-i -d -o ##OUTFILE## ##INFILE##'
